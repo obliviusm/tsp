@@ -2,7 +2,7 @@ require_relative "services/xml_parser"
 require_relative "algorithms/local_search"
 
 
-tcp_problem = get_tcp_problem "data/ftv33.xml"
+tcp_problem = get_tcp_problem "data/br17.xml"
 graph = tcp_problem[:graph]
 initial_solution = tcp_problem[:initialSolutions][:path][0][:vertex]
 #p initial_solution
