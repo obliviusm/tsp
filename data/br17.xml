@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<travellingSalesmanProblemInstance>
+
+  <name>br17</name>
+
+  <source>TSPLIB</source>
+
+  <description>17 city problem (Repetto)</description>
+
+  <doublePrecision>15</doublePrecision>
+
+  <ignoredDigits>5</ignoredDigits>
+
+  <initialSolutions>
+    <path>
+      <vertex>12</vertex>
+      <vertex>9</vertex>
+      <vertex>7</vertex>
+      <vertex>8</vertex>
+      <vertex>13</vertex>
+      <vertex>0</vertex>
+      <vertex>14</vertex>
+      <vertex>5</vertex>
+      <vertex>10</vertex>
+      <vertex>4</vertex>
+      <vertex>1</vertex>
+      <vertex>6</vertex>
+      <vertex>11</vertex>
+      <vertex>16</vertex>
+      <vertex>2</vertex>
+      <vertex>15</vertex>
+      <vertex>3</vertex>
+    </path>
+    <path>
+      <vertex>1</vertex>
+      <vertex>12</vertex>
+      <vertex>11</vertex>
+      <vertex>14</vertex>
+      <vertex>10</vertex>
+      <vertex>6</vertex>
+      <vertex>3</vertex>
+      <vertex>8</vertex>
+      <vertex>9</vertex>
+      <vertex>5</vertex>
+      <vertex>4</vertex>
+      <vertex>15</vertex>
+      <vertex>7</vertex>
+      <vertex>0</vertex>
+      <vertex>13</vertex>
+      <vertex>2</vertex>
+      <vertex>16</vertex>
+    </path>
+    <path>
+      <vertex>7</vertex>
+      <vertex>11</vertex>
+      <vertex>3</vertex>
+      <vertex>10</vertex>
+      <vertex>4</vertex>
+      <vertex>12</vertex>
+      <vertex>5</vertex>
+      <vertex>1</vertex>
+      <vertex>13</vertex>
+      <vertex>15</vertex>
+      <vertex>8</vertex>
+      <vertex>6</vertex>
+      <vertex>0</vertex>
+      <vertex>14</vertex>
+      <vertex>16</vertex>
+      <vertex>9</vertex>
+      <vertex>2</vertex>
+    </path>
+    <path>
+      <vertex>7</vertex>
+      <vertex>13</vertex>
+      <vertex>10</vertex>
+      <vertex>0</vertex>
+      <vertex>15</vertex>
+      <vertex>11</vertex>
+      <vertex>14</vertex>
+      <vertex>5</vertex>
+      <vertex>4</vertex>
+      <vertex>1</vertex>
+      <vertex>3</vertex>
+      <vertex>16</vertex>
+      <vertex>6</vertex>
+      <vertex>8</vertex>
+      <vertex>9</vertex>
+      <vertex>12</vertex>
+      <vertex>2</vertex>
+    </path>
+    <path>
+      <vertex>15</vertex>
+      <vertex>3</vertex>
+      <vertex>11</vertex>
+      <vertex>8</vertex>
+      <vertex>13</vertex>
+      <vertex>10</vertex>
+      <vertex>4</vertex>
+      <vertex>9</vertex>
+      <vertex>6</vertex>
+      <vertex>2</vertex>
+      <vertex>12</vertex>
+      <vertex>16</vertex>
+      <vertex>14</vertex>
+      <vertex>5</vertex>
+      <vertex>0</vertex>
+      <vertex>7</vertex>
+      <vertex>1</vertex>
+    </path>
+    <path>
+      <vertex>3</vertex>
+      <vertex>12</vertex>
+      <vertex>9</vertex>
+      <vertex>13</vertex>
+      <vertex>5</vertex>
+      <vertex>16</vertex>
+      <vertex>15</vertex>
+      <vertex>14</vertex>
+      <vertex>7</vertex>
+      <vertex>0</vertex>
+      <vertex>10</vertex>
+      <vertex>6</vertex>
+      <vertex>8</vertex>
+      <vertex>1</vertex>
+      <vertex>4</vertex>
+      <vertex>11</vertex>
+      <vertex>2</vertex>
+    </path>
+    <path>
+      <vertex>7</vertex>
+      <vertex>9</vertex>
+      <vertex>8</vertex>
+      <vertex>16</vertex>
+      <vertex>6</vertex>
+      <vertex>5</vertex>
+      <vertex>14</vertex>
+      <vertex>2</vertex>
+      <vertex>4</vertex>
+      <vertex>1</vertex>
+      <vertex>10</vertex>
+      <vertex>11</vertex>
+      <vertex>15</vertex>
+      <vertex>3</vertex>
+      <vertex>0</vertex>
+      <vertex>12</vertex>
+      <vertex>13</vertex>
+    </path>
+    <path>
+      <vertex>16</vertex>
+      <vertex>9</vertex>
+      <vertex>11</vertex>
+      <vertex>12</vertex>
+      <vertex>7</vertex>
+      <vertex>5</vertex>
+      <vertex>13</vertex>
+      <vertex>1</vertex>
+      <vertex>10</vertex>
+      <vertex>4</vertex>
+      <vertex>6</vertex>
+      <vertex>8</vertex>
+      <vertex>0</vertex>
+      <vertex>15</vertex>
+      <vertex>3</vertex>
+      <vertex>14</vertex>
+      <vertex>2</vertex>
+    </path>
+    <path>
+      <vertex>6</vertex>
+      <vertex>5</vertex>
+      <vertex>15</vertex>
+      <vertex>1</vertex>
+      <vertex>9</vertex>
+      <vertex>14</vertex>
+      <vertex>4</vertex>
+      <vertex>12</vertex>
+      <vertex>2</vertex>
+      <vertex>13</vertex>
+      <vertex>0</vertex>
+      <vertex>16</vertex>
+      <vertex>3</vertex>
+      <vertex>8</vertex>
+      <vertex>11</vertex>
+      <vertex>7</vertex>
+      <vertex>10</vertex>
+    </path>
+    <path>
+      <vertex>1</vertex>
+      <vertex>13</vertex>
+      <vertex>5</vertex>
+      <vertex>3</vertex>
+      <vertex>11</vertex>
+      <vertex>4</vertex>
+      <vertex>7</vertex>
+      <vertex>0</vertex>
+      <vertex>15</vertex>
+      <vertex>8</vertex>
+      <vertex>6</vertex>
+      <vertex>10</vertex>
+      <vertex>16</vertex>
+      <vertex>2</vertex>
+      <vertex>14</vertex>
+      <vertex>9</vertex>
+      <vertex>12</vertex>
+    </path>
+    <path>
+      <vertex>13</vertex>
+      <vertex>0</vertex>
+      <vertex>6</vertex>
+      <vertex>4</vertex>
+      <vertex>3</vertex>
+      <vertex>15</vertex>
+      <vertex>14</vertex>
+      <vertex>12</vertex>
+      <vertex>9</vertex>
+      <vertex>1</vertex>
+      <vertex>2</vertex>
+      <vertex>8</vertex>
+      <vertex>7</vertex>
+      <vertex>10</vertex>
+      <vertex>11</vertex>
+      <vertex>16</vertex>
+      <vertex>5</vertex>
+    </path>
+    <path>
+      <vertex>0</vertex>
+      <vertex>14</vertex>
+      <vertex>11</vertex>
+      <vertex>6</vertex>
+      <vertex>9</vertex>
+      <vertex>4</vertex>
+      <vertex>16</vertex>
+      <vertex>12</vertex>
+      <vertex>13</vertex>
+      <vertex>8</vertex>
+      <vertex>15</vertex>
+      <vertex>1</vertex>
+      <vertex>2</vertex>
+      <vertex>5</vertex>
+      <vertex>10</vertex>
+      <vertex>3</vertex>
+      <vertex>7</vertex>
+    </path>
+    <path>
+      <vertex>2</vertex>
+      <vertex>9</vertex>
+      <vertex>7</vertex>
+      <vertex>1</vertex>
+      <vertex>15</vertex>
+      <vertex>16</vertex>
+      <vertex>8</vertex>
+      <vertex>12</vertex>
+      <vertex>4</vertex>
+      <vertex>6</vertex>
+      <vertex>3</vertex>
+      <vertex>11</vertex>
+      <vertex>0</vertex>
+      <vertex>5</vertex>
+      <vertex>10</vertex>
+      <vertex>13</vertex>
+      <vertex>14</vertex>
+    </path>
+    <path>
+      <vertex>1</vertex>
+      <vertex>7</vertex>
+      <vertex>11</vertex>
+      <vertex>13</vertex>
+      <vertex>15</vertex>
+      <vertex>12</vertex>
+      <vertex>14</vertex>
+      <vertex>16</vertex>
+      <vertex>4</vertex>
+      <vertex>10</vertex>
+      <vertex>6</vertex>
+      <vertex>3</vertex>
+      <vertex>0</vertex>
+      <vertex>9</vertex>
+      <vertex>2</vertex>
+      <vertex>5</vertex>
+      <vertex>8</vertex>
+    </path>
+    <path>
+      <vertex>11</vertex>
+      <vertex>13</vertex>
+      <vertex>14</vertex>
+      <vertex>16</vertex>
+      <vertex>3</vertex>
+      <vertex>10</vertex>
+      <vertex>7</vertex>
+      <vertex>12</vertex>
+      <vertex>15</vertex>
+      <vertex>5</vertex>
+      <vertex>2</vertex>
+      <vertex>1</vertex>
+      <vertex>0</vertex>
+      <vertex>9</vertex>
+      <vertex>8</vertex>
+      <vertex>4</vertex>
+      <vertex>6</vertex>
+    </path>
+    <path>
+      <vertex>16</vertex>
+      <vertex>14</vertex>
+      <vertex>13</vertex>
+      <vertex>2</vertex>
+      <vertex>6</vertex>
+      <vertex>11</vertex>
+      <vertex>15</vertex>
+      <vertex>4</vertex>
+      <vertex>3</vertex>
+      <vertex>1</vertex>
+      <vertex>10</vertex>
+      <vertex>8</vertex>
+      <vertex>5</vertex>
+      <vertex>0</vertex>
+      <vertex>9</vertex>
+      <vertex>7</vertex>
+      <vertex>12</vertex>
+    </path>
+    <path>
+      <vertex>4</vertex>
+      <vertex>6</vertex>
+      <vertex>9</vertex>
+      <vertex>3</vertex>
+      <vertex>2</vertex>
+      <vertex>13</vertex>
+      <vertex>7</vertex>
+      <vertex>5</vertex>
+      <vertex>14</vertex>
+      <vertex>15</vertex>
+      <vertex>16</vertex>
+      <vertex>0</vertex>
+      <vertex>12</vertex>
+      <vertex>10</vertex>
+      <vertex>8</vertex>
+      <vertex>1</vertex>
+      <vertex>11</vertex>
+    </path>
+  </initialSolutions>
+
+  <graph>
+    <vertex>
+      <edge cost="9.999000000000000e+03">0</edge>
+      <edge cost="3.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="3.000000000000000e+00">9</edge>
+      <edge cost="3.000000000000000e+00">10</edge>
+      <edge cost="0.000000000000000e+00">11</edge>
+      <edge cost="3.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="3.000000000000000e+00">0</edge>
+      <edge cost="9.999000000000000e+03">1</edge>
+      <edge cost="3.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="0.000000000000000e+00">9</edge>
+      <edge cost="0.000000000000000e+00">10</edge>
+      <edge cost="3.000000000000000e+00">11</edge>
+      <edge cost="0.000000000000000e+00">12</edge>
+      <edge cost="3.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="5.000000000000000e+00">0</edge>
+      <edge cost="3.000000000000000e+00">1</edge>
+      <edge cost="9.999000000000000e+03">2</edge>
+      <edge cost="7.200000000000000e+01">3</edge>
+      <edge cost="7.200000000000000e+01">4</edge>
+      <edge cost="4.800000000000000e+01">5</edge>
+      <edge cost="4.800000000000000e+01">6</edge>
+      <edge cost="2.400000000000000e+01">7</edge>
+      <edge cost="2.400000000000000e+01">8</edge>
+      <edge cost="3.000000000000000e+00">9</edge>
+      <edge cost="3.000000000000000e+00">10</edge>
+      <edge cost="5.000000000000000e+00">11</edge>
+      <edge cost="3.000000000000000e+00">12</edge>
+      <edge cost="0.000000000000000e+00">13</edge>
+      <edge cost="4.800000000000000e+01">14</edge>
+      <edge cost="4.800000000000000e+01">15</edge>
+      <edge cost="2.400000000000000e+01">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="4.800000000000000e+01">0</edge>
+      <edge cost="4.800000000000000e+01">1</edge>
+      <edge cost="7.400000000000000e+01">2</edge>
+      <edge cost="9.999000000000000e+03">3</edge>
+      <edge cost="0.000000000000000e+00">4</edge>
+      <edge cost="6.000000000000000e+00">5</edge>
+      <edge cost="6.000000000000000e+00">6</edge>
+      <edge cost="1.200000000000000e+01">7</edge>
+      <edge cost="1.200000000000000e+01">8</edge>
+      <edge cost="4.800000000000000e+01">9</edge>
+      <edge cost="4.800000000000000e+01">10</edge>
+      <edge cost="4.800000000000000e+01">11</edge>
+      <edge cost="4.800000000000000e+01">12</edge>
+      <edge cost="7.400000000000000e+01">13</edge>
+      <edge cost="6.000000000000000e+00">14</edge>
+      <edge cost="6.000000000000000e+00">15</edge>
+      <edge cost="1.200000000000000e+01">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="4.800000000000000e+01">0</edge>
+      <edge cost="4.800000000000000e+01">1</edge>
+      <edge cost="7.400000000000000e+01">2</edge>
+      <edge cost="0.000000000000000e+00">3</edge>
+      <edge cost="9.999000000000000e+03">4</edge>
+      <edge cost="6.000000000000000e+00">5</edge>
+      <edge cost="6.000000000000000e+00">6</edge>
+      <edge cost="1.200000000000000e+01">7</edge>
+      <edge cost="1.200000000000000e+01">8</edge>
+      <edge cost="4.800000000000000e+01">9</edge>
+      <edge cost="4.800000000000000e+01">10</edge>
+      <edge cost="4.800000000000000e+01">11</edge>
+      <edge cost="4.800000000000000e+01">12</edge>
+      <edge cost="7.400000000000000e+01">13</edge>
+      <edge cost="6.000000000000000e+00">14</edge>
+      <edge cost="6.000000000000000e+00">15</edge>
+      <edge cost="1.200000000000000e+01">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="8.000000000000000e+00">0</edge>
+      <edge cost="8.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+01">2</edge>
+      <edge cost="6.000000000000000e+00">3</edge>
+      <edge cost="6.000000000000000e+00">4</edge>
+      <edge cost="9.999000000000000e+03">5</edge>
+      <edge cost="0.000000000000000e+00">6</edge>
+      <edge cost="8.000000000000000e+00">7</edge>
+      <edge cost="8.000000000000000e+00">8</edge>
+      <edge cost="8.000000000000000e+00">9</edge>
+      <edge cost="8.000000000000000e+00">10</edge>
+      <edge cost="8.000000000000000e+00">11</edge>
+      <edge cost="8.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+01">13</edge>
+      <edge cost="0.000000000000000e+00">14</edge>
+      <edge cost="0.000000000000000e+00">15</edge>
+      <edge cost="8.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="8.000000000000000e+00">0</edge>
+      <edge cost="8.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+01">2</edge>
+      <edge cost="6.000000000000000e+00">3</edge>
+      <edge cost="6.000000000000000e+00">4</edge>
+      <edge cost="0.000000000000000e+00">5</edge>
+      <edge cost="9.999000000000000e+03">6</edge>
+      <edge cost="8.000000000000000e+00">7</edge>
+      <edge cost="8.000000000000000e+00">8</edge>
+      <edge cost="8.000000000000000e+00">9</edge>
+      <edge cost="8.000000000000000e+00">10</edge>
+      <edge cost="8.000000000000000e+00">11</edge>
+      <edge cost="8.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+01">13</edge>
+      <edge cost="0.000000000000000e+00">14</edge>
+      <edge cost="0.000000000000000e+00">15</edge>
+      <edge cost="8.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="5.000000000000000e+00">0</edge>
+      <edge cost="5.000000000000000e+00">1</edge>
+      <edge cost="2.600000000000000e+01">2</edge>
+      <edge cost="1.200000000000000e+01">3</edge>
+      <edge cost="1.200000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="9.999000000000000e+03">7</edge>
+      <edge cost="0.000000000000000e+00">8</edge>
+      <edge cost="5.000000000000000e+00">9</edge>
+      <edge cost="5.000000000000000e+00">10</edge>
+      <edge cost="5.000000000000000e+00">11</edge>
+      <edge cost="5.000000000000000e+00">12</edge>
+      <edge cost="2.600000000000000e+01">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="0.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="5.000000000000000e+00">0</edge>
+      <edge cost="5.000000000000000e+00">1</edge>
+      <edge cost="2.600000000000000e+01">2</edge>
+      <edge cost="1.200000000000000e+01">3</edge>
+      <edge cost="1.200000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="0.000000000000000e+00">7</edge>
+      <edge cost="9.999000000000000e+03">8</edge>
+      <edge cost="5.000000000000000e+00">9</edge>
+      <edge cost="5.000000000000000e+00">10</edge>
+      <edge cost="5.000000000000000e+00">11</edge>
+      <edge cost="5.000000000000000e+00">12</edge>
+      <edge cost="2.600000000000000e+01">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="0.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="3.000000000000000e+00">0</edge>
+      <edge cost="0.000000000000000e+00">1</edge>
+      <edge cost="3.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="9.999000000000000e+03">9</edge>
+      <edge cost="0.000000000000000e+00">10</edge>
+      <edge cost="3.000000000000000e+00">11</edge>
+      <edge cost="0.000000000000000e+00">12</edge>
+      <edge cost="3.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="3.000000000000000e+00">0</edge>
+      <edge cost="0.000000000000000e+00">1</edge>
+      <edge cost="3.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="0.000000000000000e+00">9</edge>
+      <edge cost="9.999000000000000e+03">10</edge>
+      <edge cost="3.000000000000000e+00">11</edge>
+      <edge cost="0.000000000000000e+00">12</edge>
+      <edge cost="3.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="0.000000000000000e+00">0</edge>
+      <edge cost="3.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="3.000000000000000e+00">9</edge>
+      <edge cost="3.000000000000000e+00">10</edge>
+      <edge cost="9.999000000000000e+03">11</edge>
+      <edge cost="3.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="3.000000000000000e+00">0</edge>
+      <edge cost="0.000000000000000e+00">1</edge>
+      <edge cost="3.000000000000000e+00">2</edge>
+      <edge cost="4.800000000000000e+01">3</edge>
+      <edge cost="4.800000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="5.000000000000000e+00">7</edge>
+      <edge cost="5.000000000000000e+00">8</edge>
+      <edge cost="0.000000000000000e+00">9</edge>
+      <edge cost="0.000000000000000e+00">10</edge>
+      <edge cost="3.000000000000000e+00">11</edge>
+      <edge cost="9.999000000000000e+03">12</edge>
+      <edge cost="3.000000000000000e+00">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="5.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="5.000000000000000e+00">0</edge>
+      <edge cost="3.000000000000000e+00">1</edge>
+      <edge cost="0.000000000000000e+00">2</edge>
+      <edge cost="7.200000000000000e+01">3</edge>
+      <edge cost="7.200000000000000e+01">4</edge>
+      <edge cost="4.800000000000000e+01">5</edge>
+      <edge cost="4.800000000000000e+01">6</edge>
+      <edge cost="2.400000000000000e+01">7</edge>
+      <edge cost="2.400000000000000e+01">8</edge>
+      <edge cost="3.000000000000000e+00">9</edge>
+      <edge cost="3.000000000000000e+00">10</edge>
+      <edge cost="5.000000000000000e+00">11</edge>
+      <edge cost="3.000000000000000e+00">12</edge>
+      <edge cost="9.999000000000000e+03">13</edge>
+      <edge cost="4.800000000000000e+01">14</edge>
+      <edge cost="4.800000000000000e+01">15</edge>
+      <edge cost="2.400000000000000e+01">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="8.000000000000000e+00">0</edge>
+      <edge cost="8.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+01">2</edge>
+      <edge cost="6.000000000000000e+00">3</edge>
+      <edge cost="6.000000000000000e+00">4</edge>
+      <edge cost="0.000000000000000e+00">5</edge>
+      <edge cost="0.000000000000000e+00">6</edge>
+      <edge cost="8.000000000000000e+00">7</edge>
+      <edge cost="8.000000000000000e+00">8</edge>
+      <edge cost="8.000000000000000e+00">9</edge>
+      <edge cost="8.000000000000000e+00">10</edge>
+      <edge cost="8.000000000000000e+00">11</edge>
+      <edge cost="8.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+01">13</edge>
+      <edge cost="9.999000000000000e+03">14</edge>
+      <edge cost="0.000000000000000e+00">15</edge>
+      <edge cost="8.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="8.000000000000000e+00">0</edge>
+      <edge cost="8.000000000000000e+00">1</edge>
+      <edge cost="5.000000000000000e+01">2</edge>
+      <edge cost="6.000000000000000e+00">3</edge>
+      <edge cost="6.000000000000000e+00">4</edge>
+      <edge cost="0.000000000000000e+00">5</edge>
+      <edge cost="0.000000000000000e+00">6</edge>
+      <edge cost="8.000000000000000e+00">7</edge>
+      <edge cost="8.000000000000000e+00">8</edge>
+      <edge cost="8.000000000000000e+00">9</edge>
+      <edge cost="8.000000000000000e+00">10</edge>
+      <edge cost="8.000000000000000e+00">11</edge>
+      <edge cost="8.000000000000000e+00">12</edge>
+      <edge cost="5.000000000000000e+01">13</edge>
+      <edge cost="0.000000000000000e+00">14</edge>
+      <edge cost="9.999000000000000e+03">15</edge>
+      <edge cost="8.000000000000000e+00">16</edge>
+    </vertex>
+    <vertex>
+      <edge cost="5.000000000000000e+00">0</edge>
+      <edge cost="5.000000000000000e+00">1</edge>
+      <edge cost="2.600000000000000e+01">2</edge>
+      <edge cost="1.200000000000000e+01">3</edge>
+      <edge cost="1.200000000000000e+01">4</edge>
+      <edge cost="8.000000000000000e+00">5</edge>
+      <edge cost="8.000000000000000e+00">6</edge>
+      <edge cost="0.000000000000000e+00">7</edge>
+      <edge cost="0.000000000000000e+00">8</edge>
+      <edge cost="5.000000000000000e+00">9</edge>
+      <edge cost="5.000000000000000e+00">10</edge>
+      <edge cost="5.000000000000000e+00">11</edge>
+      <edge cost="5.000000000000000e+00">12</edge>
+      <edge cost="2.600000000000000e+01">13</edge>
+      <edge cost="8.000000000000000e+00">14</edge>
+      <edge cost="8.000000000000000e+00">15</edge>
+      <edge cost="9.999000000000000e+03">16</edge>
+    </vertex>
+  </graph>
+
+</travellingSalesmanProblemInstance>
