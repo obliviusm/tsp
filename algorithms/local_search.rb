@@ -2,9 +2,9 @@ class LocalSearch
   attr_reader :x, :f
   
   def initialize w, x
-    @w = w    # graph weights
-    @x = x    # current path through cities
-    @f = distance(x) # length of current path
+    @w = w            # graph weights
+    @x = x            # current path through cities
+    @f = distance(x)  # length of current path
   end
   
   def simple_local_search
@@ -42,6 +42,7 @@ class LocalSearch
     length = 0
     for i in 0...(x.size - 1)
       from, to = x[i], x[i+1]
+      #p [from, to, @w[from][to]]
       length += @w[from][to]
     end
     length
