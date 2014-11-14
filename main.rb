@@ -4,7 +4,7 @@ require_relative "algorithms/local_search"
 
 
 #problems = ["br17", "bays29", "ftv33", "ftv35", "swiss42", "p43", "ftv44"]
-problems = ["eil101"]
+problems = ["br17"]
 table = {}
 problems.each do |filename| 
   table[filename] = []

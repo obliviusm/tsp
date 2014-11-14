@@ -11,7 +11,7 @@ class LocalSearch
   def simple_local_search
     begin 
       found_new_solution = false
-      neighborhood do |x_new, f_new|
+      neighborhood(true) do |x_new, f_new|
         if f_new < @f
           @x, @f = x_new, f_new
           found_new_solution = true
@@ -24,8 +24,10 @@ class LocalSearch
   
   protected
   
-  def neighborhood
-    swap_indices.each do |i, j|
+  def neighborhood shuffle = false
+    indices = swap_indices
+    #indices.shuffle! if shuffle 
+    indices.each do |i, j|
       x = swap(i, j, @x)
       f = swap_distance(i, j, @x.dup, @f)
       #f = distance x
@@ -86,14 +88,17 @@ class LocalSearch
       delta += @w[i0][j1] - @w[i0][i1]
     end
     
+    check_delta i, j, x, f, delta
+    f + delta
+  end
+  
+  def check_delta i, j, x, f, delta
     f_new = f + delta
-=begin
     f_right =  distance(swap(i, j, x))
+    
     unless f_new == f_right
       p [f, f_new, f_right, delta]
       raise "foo"
     end
-=end
-    f_new
   end
 end
