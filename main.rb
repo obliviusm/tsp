@@ -2,7 +2,6 @@ require_relative "services/xml_parser"
 require_relative "services/timer"
 require_relative "algorithms/local_search"
 
-
 #problems = ["br17", "bays29", "ftv33", "ftv35", "swiss42", "p43", "ftv44"]
 problems = ["br17"]
 table = {}
