@@ -2,7 +2,7 @@ require_relative "../lib/tsp_solution"
 require_relative "../lib/neighborhood"
 require_relative "../lib/solve_with_timer"
 
-class HillClimbing
+class SimulatedAnnealing
   include Neighborhood
   include SolveWithTimer
   
@@ -14,7 +14,7 @@ class HillClimbing
   def algorithm
     begin 
       found_new_solution = false
-      neighborhood do |solution_new|
+      neighborhood(true) do |solution_new|
         if solution_new < @solution
           @solution = solution_new
           found_new_solution = true
