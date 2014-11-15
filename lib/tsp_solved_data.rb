@@ -19,4 +19,8 @@ class TSPSolvedData
   def to_hash
     {s: @start_solution.f, f: @finish_solution.f, t: @time}
   end
+
+  def to_detailed_array
+    [@finish_solution.f] + @finish_solution.x
+  end
 end

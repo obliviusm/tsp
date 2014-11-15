@@ -15,6 +15,10 @@ class TSPSolvedDataManager
   def last
     @tsp_solved_data.last
   end
+
+  def best
+    @tsp_solved_data.min
+  end
 =begin
   def initialize name, algorithms
     @name = name
