@@ -6,10 +6,19 @@ module XMLParser
     f = File.open filename
     tsp_problem = Hash.from_xml(f)[:travellingSalesmanProblemInstance]
     reoder_costs_in_graph tsp_problem
+    reoder_initial_solutions tsp_problem
     f.close
     tsp_problem
   end
   # other things
+  def self.reoder_initial_solutions tsp_problem
+    initialSolutions = []
+    tsp_problem[:initialSolutions][:path].each_with_index do |solution, i|
+      initialSolutions[i] = solution[:vertex]
+    end
+    tsp_problem[:initialSolutions] = initialSolutions
+  end
+
   def self.set_diagonal graph
     for i in 0...graph.length
       graph[i][i] = Float::INFINITY
