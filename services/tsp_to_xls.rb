@@ -13,7 +13,6 @@ class TSPtoXLS
     set_current_sheet algorithm
     write_detailed_report_header
     @problems.each_with_index do |(name, algorithms_with_tsp_data), index|
-      #p [name, tsp_data, index]
       tsp_data = algorithms_with_tsp_data[algorithm]
       insert_row index + 1, detailed_row(name, tsp_data)
     end
@@ -54,7 +53,6 @@ class TSPtoXLS
   end
 
   def insert_row index, row
-    #p index, row
     @current_sheet.insert_row index, row.unshift(index)
   end
 

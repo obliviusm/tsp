@@ -1,11 +1,7 @@
 class TSPSolvedData
   include Comparable
   attr_reader :start_solution, :finish_solution, :time
-=begin
-  alias :start_solution :s
-  alias :finish_solution :f
-  alias :time :t
-=end
+
   def initialize start_solution, finish_solution, time
     @start_solution = start_solution
     @finish_solution = finish_solution

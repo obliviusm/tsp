@@ -31,8 +31,8 @@ module XMLParser
       reodered_graph[source_node] = []
       vertex[:edge].each do |edge|
         dest_node = edge["value"].to_i
-        reodered_graph[source_node][dest_node] = edge[:attributes][:cost].to_f.to_i
-        reodered_graph[source_node][dest_node] = Float::INFINITY if reodered_graph[source_node][dest_node] == 9999
+        reodered_graph[source_node][dest_node] = edge[:attributes][:cost].to_f#.to_i
+        reodered_graph[source_node][dest_node] = Float::INFINITY if reodered_graph[source_node][dest_node] > 9000.0
       end
     end
     set_diagonal reodered_graph
