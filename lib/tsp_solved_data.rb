@@ -23,4 +23,25 @@ class TSPSolvedData
   def to_detailed_array
     [@finish_solution.f, @time] + @finish_solution.x
   end
+
+  def data_for_comparison f_start_best, f_best
+    @f_start_best = f_start_best
+    @f_best = f_best
+  end
+
+  def to_comparison_array
+    [@finish_solution.f, accuracy, @time]
+  end
+
+  def compare_array tsp_data
+    [
+      @finish_solution.f - tsp_data.finish_solution.f,
+      accuracy - tsp_data.accuracy,
+      @time / tsp_data.time
+    ]
+  end
+
+  def accuracy
+    100.0 * (@finish_solution.f - @f_best) / @f_best
+  end
 end

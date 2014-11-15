@@ -1,6 +1,8 @@
 require 'spreadsheet'
+require_relative '../lib/tsp_solved_data_manager'
 
 class TSPtoXLS
+  include TSPSolvedDataManager
   def initialize problems
     @problems = problems
     @filename = "result/tcp#{Time.now.strftime("%d_%H:%M:%S")}.xls"
@@ -10,10 +12,20 @@ class TSPtoXLS
   def detailed_report algorithm
     set_current_sheet algorithm
     write_detailed_report_header
-    @problems.each_with_index do |(name, algorithm_tsp_data), index|
+    @problems.each_with_index do |(name, algorithms_with_tsp_data), index|
       #p [name, tsp_data, index]
-      tsp_data = algorithm_tsp_data[algorithm]
+      tsp_data = algorithms_with_tsp_data[algorithm]
       insert_row index + 1, detailed_row(name, tsp_data)
+    end
+    save_book
+  end
+
+  def comparison_report algorithm1, algorithm2
+    set_current_sheet "Comparison"
+    write_comparison_report_header
+    @problems.each_with_index do |(name, data), index|
+      row = comparison_row name, data[algorithm1], data[algorithm2]
+      insert_row index + 1, row
     end
     save_book
   end
@@ -23,6 +35,18 @@ class TSPtoXLS
   def save_book
     File.delete @filename if File.exist? @filename
     @book.write @filename
+  end
+
+  def comparison_row name, tsp_data1, tsp_data_2
+    tsp_best1, tsp_best2 = tsp_data1.min, tsp_data_2.min
+    tsp_start_best = find_best_start_solution(tsp_data1).start_solution.f
+    tsp_very_best = GENERAL_PROBLEMS_INFO[name][:f]
+    tsp_best1.data_for_comparison(tsp_start_best, tsp_very_best)
+    tsp_best2.data_for_comparison(tsp_start_best, tsp_very_best)
+
+    [name] + GENERAL_PROBLEMS_INFO[name].values + [tsp_start_best] +
+    tsp_best1.to_comparison_array + tsp_best2.to_comparison_array +
+    tsp_best2.compare_array(tsp_best1)
   end
 
   def detailed_row(name, tsp_data)
@@ -36,6 +60,10 @@ class TSPtoXLS
 
   def set_current_sheet name
     @current_sheet = @book.create_worksheet :name => name
+  end
+
+  def write_comparison_report_header
+    @current_sheet.insert_row(0, COMPARISON_REPORT_HEADER)
   end
 
   def write_detailed_report_header
@@ -77,6 +105,7 @@ class TSPtoXLS
     "Назва задачі",
     "n",
     "f*",
+    "f0",
     "f1",
     "E1",
     "t1",

@@ -28,6 +28,9 @@ class Manager
     @algorithms.each do |algorithm|
       tsp_to_xls.detailed_report algorithm.to_s
     end
+    if @algorithms.count == 2
+      tsp_to_xls.comparison_report @algorithms[0].to_s, @algorithms[1].to_s
+    end
   end
 
   def initialize_problem_containers
