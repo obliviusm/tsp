@@ -21,6 +21,6 @@ class TSPSolvedData
   end
 
   def to_detailed_array
-    [@finish_solution.f] + @finish_solution.x
+    [@finish_solution.f, @time] + @finish_solution.x
   end
 end

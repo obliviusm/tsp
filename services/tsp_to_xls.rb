@@ -3,10 +3,8 @@ require 'spreadsheet'
 class TSPtoXLS
   def initialize problems
     @problems = problems
-    @names = problems.keys
     @filename = "result/tcp#{Time.now.strftime("%d_%H:%M:%S")}.xls"
-    @book = Spreadsheet::Workbook.new#.write(@filename)
-    #@book = Spreadsheet.open(@filename)
+    @book = Spreadsheet::Workbook.new
   end
 
   def detailed_report
@@ -69,6 +67,7 @@ class TSPtoXLS
     "n",
     "f*",
     "f record",
+    "час",
     "Найкращий розв'язок"
   ].freeze
 
