@@ -1,6 +1,8 @@
 require_relative "../lib/tsp_solution"
 require_relative "../lib/neighborhood"
+require_relative "../lib/tsp_solved_data"
 require_relative "../services/timer"
+
 
 class HillClimbing
   include Neighborhood

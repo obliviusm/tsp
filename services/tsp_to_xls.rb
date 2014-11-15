@@ -7,11 +7,12 @@ class TSPtoXLS
     @book = Spreadsheet::Workbook.new
   end
 
-  def detailed_report
-    set_current_sheet "Детальний звіт"
+  def detailed_report algorithm
+    set_current_sheet algorithm
     write_detailed_report_header
-    @problems.each_with_index do |(name, tsp_data), index|
+    @problems.each_with_index do |(name, algorithm_tsp_data), index|
       #p [name, tsp_data, index]
+      tsp_data = algorithm_tsp_data[algorithm]
       insert_row index + 1, detailed_row(name, tsp_data)
     end
     save_book
@@ -25,7 +26,7 @@ class TSPtoXLS
   end
 
   def detailed_row(name, tsp_data)
-    [name] + GENERAL_PROBLEMS_INFO[name].values + tsp_data.best.to_detailed_array
+    [name] + GENERAL_PROBLEMS_INFO[name].values + tsp_data.min.to_detailed_array
   end
 
   def insert_row index, row
