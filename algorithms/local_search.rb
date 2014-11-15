@@ -1,5 +1,7 @@
 require_relative "../lib/tsp_solution"
 require_relative "../lib/neighborhood"
+require_relative "../services/timer"
+
 class LocalSearch
   include Neighborhood
   
@@ -8,8 +10,18 @@ class LocalSearch
     @n = @solution.n
   end
   
-  def f
-    @solution.f
+  #def f
+  #  @solution.f
+  #end
+
+  def solve
+    s = @solution
+    t = Timer.exec_time do
+      simple_local_search
+    end
+    f = @solution
+    #{s: s.f, f: f.f, t: t}
+    TSPSolvedData.new(s, f, t)
   end
   
   def simple_local_search

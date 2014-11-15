@@ -9,7 +9,7 @@ class TSPSolution
     @f = f || distance  # length of path
   end
   
-  def <=> (other) #1 if self>other; 0 if self==other; -1 if self<other
+  def <=> (other)
     @f <=> other.f
   end
   
