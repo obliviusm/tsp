@@ -5,7 +5,7 @@ require_relative "hill_climbing"
 class SmoothingAlgorithm
   include SolveWithTimer
   include SmoothMatrix
-  ALFAS = [6, 3, 2, 1].freeze
+  ALFAS = [12, 6, 3, 2, 1].freeze
 
   def initialize w, x
     @solution = TSPSolution.new(w, x) # is used in SolveWithTimer
