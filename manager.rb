@@ -13,17 +13,17 @@ class Manager
       graph, initial_solutions = get_initial_data problem
       initial_solutions.each do |initial_solution|
         @algorithms.each do |algorithm|
-          algorithm_solver = algorithm.new(graph, initial_solution)
+          algorithm_solver = algorithm.new(graph, initial_solution.dup)
           @problem_containers[problem][algorithm.to_s].push algorithm_solver.solve
         end
       end
     end
-    import_to_xls
+    export_to_xls
   end
   
   protected
 
-  def import_to_xls
+  def export_to_xls
     tsp_to_xls = TSPtoXLS.new @problem_containers
     @algorithms.each do |algorithm|
       tsp_to_xls.detailed_report algorithm.to_s

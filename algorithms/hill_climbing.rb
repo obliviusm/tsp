@@ -22,5 +22,6 @@ class HillClimbing
         end
       end
     end while found_new_solution
+    @solution
   end
 end
