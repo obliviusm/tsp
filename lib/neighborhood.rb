@@ -1,11 +1,21 @@
 module Neighborhood
   def neighborhood shuffle = false
     indices = swap_indices
-    indices.shuffle! if shuffle 
+    indices.shuffle! if make_shuffle? shuffle
     indices.each do |i, j|
       yield @solution.swap(i, j)
     end
   end
+
+  def make_shuffle? shuffle
+    if shuffle
+      if @shuffle_made
+        false
+      else
+        @shuffle_made = true
+      end
+    end 
+  end 
   
   def swap_indices
     unless @swap_indices

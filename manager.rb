@@ -1,5 +1,6 @@
 require_relative "services/xml_parser"
 require_relative "services/tsp_to_xls"
+require_relative "lib/solver"
 
 class Manager
   def initialize problems, algorithms
@@ -11,11 +12,9 @@ class Manager
   def solve_problems
     @problems.each do |problem|
       graph, initial_solutions = get_initial_data problem
-      initial_solutions.each do |initial_solution|
-        @algorithms.each do |algorithm|
-          algorithm_solver = algorithm.new(graph, initial_solution.dup)
-          @problem_containers[problem][algorithm.to_s].push algorithm_solver.solve
-        end
+      @algorithms.each do |algorithm|
+        algorithm_solver = Solver.new(graph, algorithm, initial_solutions.dup)
+        @problem_containers[problem][algorithm.to_s] = algorithm_solver.solve
       end
     end
     export_to_xls
@@ -37,9 +36,9 @@ class Manager
     @problem_containers = {}
     @problems.each do |problem|
       @problem_containers[problem] = {}
-      @algorithms.each do |algorithm|
-        @problem_containers[problem][algorithm.to_s] = []
-      end
+      #@algorithms.each do |algorithm|
+      #  @problem_containers[problem][algorithm.to_s] = []
+      #end
     end
   end
 

@@ -1,8 +1,6 @@
 require 'spreadsheet'
-require_relative '../lib/tsp_solved_data_manager'
 
 class TSPtoXLS
-  include TSPSolvedDataManager
   def initialize problems
     @problems = problems
     @filename = "result/tcp#{Time.now.strftime("%d_%H:%M:%S")}.xls"
@@ -36,9 +34,8 @@ class TSPtoXLS
     @book.write @filename
   end
 
-  def comparison_row name, tsp_data1, tsp_data_2
-    tsp_best1, tsp_best2 = tsp_data1.min, tsp_data_2.min
-    tsp_start_best = find_best_start_solution(tsp_data1).start_solution.f
+  def comparison_row name, tsp_best1, tsp_best2
+    tsp_start_best = tsp_best1.best_start_solution.f
     tsp_very_best = GENERAL_PROBLEMS_INFO[name][:f]
     tsp_best1.data_for_comparison(tsp_start_best, tsp_very_best)
     tsp_best2.data_for_comparison(tsp_start_best, tsp_very_best)
@@ -49,7 +46,7 @@ class TSPtoXLS
   end
 
   def detailed_row(name, tsp_data)
-    [name] + GENERAL_PROBLEMS_INFO[name].values + tsp_data.min.to_detailed_array
+    [name] + GENERAL_PROBLEMS_INFO[name].values + tsp_data.to_detailed_array
   end
 
   def insert_row index, row

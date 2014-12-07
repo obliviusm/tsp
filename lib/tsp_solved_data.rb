@@ -1,9 +1,9 @@
 class TSPSolvedData
   include Comparable
-  attr_reader :start_solution, :finish_solution, :time
+  attr_reader :start_solutions, :finish_solution, :time
 
-  def initialize start_solution, finish_solution, time
-    @start_solution = start_solution
+  def initialize start_solutions, finish_solution, time
+    @start_solutions = start_solutions
     @finish_solution = finish_solution
     @time = time
   end
@@ -11,11 +11,11 @@ class TSPSolvedData
   def <=> (other)
     @finish_solution <=> other.finish_solution
   end
-
+=begin
   def to_hash
     {s: @start_solution.f, f: @finish_solution.f, t: @time}
   end
-
+=end
   def to_detailed_array
     [@finish_solution.f, @time] + @finish_solution.x
   end
@@ -39,5 +39,16 @@ class TSPSolvedData
 
   def accuracy
     100.0 * (@finish_solution.f - @f_best) / @f_best
+  end
+
+  def best_start_solution
+    best_sol = @start_solutions[0]
+    @start_solutions.each do |solution|
+      if solution < best_sol
+        best_sol = solution
+      end
+    end
+
+    best_sol
   end
 end

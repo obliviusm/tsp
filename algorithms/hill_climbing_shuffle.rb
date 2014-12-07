@@ -2,7 +2,7 @@ require_relative "../lib/tsp_solution"
 require_relative "../lib/neighborhood"
 require_relative "../lib/single_solution_based"
 
-class HillClimbing
+class HillClimbingShuffle
   include Neighborhood
   extend SingleSolutionBased
   attr_reader :solution
@@ -15,7 +15,7 @@ class HillClimbing
   def solve
     begin 
       found_new_solution = false
-      neighborhood do |solution_new|
+      neighborhood(true) do |solution_new|
         if solution_new < @solution
           @solution = solution_new
           found_new_solution = true
