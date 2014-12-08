@@ -1,10 +1,19 @@
 module SwapTwoElements
-  def swap_random
-    i = 1 + rand(@n)
+  def swap_random num = 1
+    solution = self
+    num.times do
+      i, j = two_random_num(@n + 1)
+      solution = solution.swap i, j
+    end
+    solution
+  end
+
+  def two_random_num max_num
+    i = rand max_num
     begin
-      j = 1 + rand(@n)
+      j = rand max_num
     end while i == j
-    swap i, j
+    [i, j]
   end
 
   def swap i, j
