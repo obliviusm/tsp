@@ -9,50 +9,57 @@ class GeneticAlgorithm
 
   MUTATION_PERCENT = 5
   ITERATIONS = 10
-  MAX_POPULATION = 20
+  MAX_POPULATION = 30
+  BEST_PERCENT = 5
 
   def initialize w, paths
-    @population = TSPSolution.new_array w, paths
+    @population = (TSPSolution.new_array w, paths).sort
     @solution = @population.min
     @n = @solution.n
   end
 
   def solve
+    make_hill_climb_for_bests
     begin 
       reproduction
       mutation
       selection
-      update_record
+      make_hill_climb_for_bests
     end while stop_criteria
-    make_hill_climb
   end
 
   protected
 
-  def make_hill_climb
-    @solution  = HillClimbing.new(@solution.w, @solution.x).solve
+  def make_hill_climb_for_bests
+    best_climbers = @population.sort.first(BEST_PERCENT).map do |sol|
+      HillClimbing.new(sol.w, sol.x).solve
+    end
+    update_record best_climbers.min
   end
 
   def reproduction
     children = []
     @population.shuffle.each_slice(2) do |sol1, sol2|
-      children.push sol1.cycle_x(sol2) if sol1 && sol2
+      if sol1 && sol2
+        children.push sol1.cycle_x(sol2)
+        children.push sol2.cycle_x(sol1)
+      end
     end
-    @population += children
+    @population = children # goodbye parents
   end
 
   def mutation
-    mutant = []
-    @population.shuffle.percent_elements(MUTATION_PERCENT).each do |sol|
-      mutant.push sol.swap_random
+    mutant = @population.shuffle.percent_elements(MUTATION_PERCENT).map do |sol|
+      sol.swap_random
     end
     @population += mutant
   end
 
   def selection
-    @population = @population.sort.first(MAX_POPULATION * @n).delete_if do |sol|
-      sol.f == Float::INFINITY
-    end
+    @population = @population
+      .delete_tsp_diplicates
+      .sort.first(MAX_POPULATION * @n)
+      .delete_if { |sol| sol.f == Float::INFINITY }
   end
 
   def stop_criteria
@@ -61,8 +68,7 @@ class GeneticAlgorithm
     @counter < ITERATIONS * @n
   end
 
-  def update_record
-    new_record = @population.min
-    @solution = new_record if new_record < @solution
+  def update_record candidate
+    @solution = candidate if candidate < @solution
   end
 end
