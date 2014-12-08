@@ -2,12 +2,14 @@ require_relative "manager"
 require_relative "algorithms/hill_climbing"
 require_relative "algorithms/hill_climbing_shuffle"
 require_relative "algorithms/smoothing_algorithm"
+require_relative "algorithms/genetic_algorithm"
 #
 # => Input Info
 #
-problems = ["br17", "bays29", "ftv33", "ftv35", "swiss42" , "p43", "ftv44", "ftv47", "ry48p", "eil51", "berlin52", "ft53", "ftv55", "ftv64", "eil76", "eil101"]  
+#problems = ["br17", "bays29", "ftv33", "ftv35", "swiss42" , "p43", "ftv44", "ftv47", "ry48p", "eil51", "berlin52", "ft53", "ftv55", "ftv64", "eil76", "eil101"]  
+problems = ["br17", "bays29", "ftv33", "ftv35"]
 #problems = ["br17"]
-algorithms = [HillClimbing, HillClimbingShuffle]
+algorithms = [HillClimbing, GeneticAlgorithm]
 #
 # => Solving
 #

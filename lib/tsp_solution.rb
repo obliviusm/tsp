@@ -1,7 +1,9 @@
 require_relative "swap_two_elements"
+require_relative "crossover"
 class TSPSolution
   include Comparable
   include SwapTwoElements
+  include Crossover
   attr_reader :w, :n, :x, :f
   
   def initialize w, x, f = nil
@@ -13,6 +15,12 @@ class TSPSolution
   
   def <=> (other)
     @f <=> other.f
+  end
+
+  def self.new_array graph, solution_paths
+    solution_paths.map do |path|
+      self.new graph, path
+    end
   end
   
   protected

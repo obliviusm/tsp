@@ -1,5 +1,15 @@
 module SwapTwoElements
+  def swap_random
+    i = 1 + rand(@n)
+    begin
+      j = 1 + rand(@n)
+    end while i == j
+    swap i, j
+  end
+
   def swap i, j
+    i, j = [i, j].sort
+    
     i0, i1, i2 = x[i - 1], x[i], x[i + 1]
     j0, j1, j2 = x[j - 1], x[j], x[j + 1]
     j2 = x[0] if j == n 

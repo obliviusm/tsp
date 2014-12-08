@@ -11,11 +11,7 @@ class TSPSolvedData
   def <=> (other)
     @finish_solution <=> other.finish_solution
   end
-=begin
-  def to_hash
-    {s: @start_solution.f, f: @finish_solution.f, t: @time}
-  end
-=end
+
   def to_detailed_array
     [@finish_solution.f, @time] + @finish_solution.x
   end
