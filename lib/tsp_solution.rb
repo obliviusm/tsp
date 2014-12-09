@@ -1,11 +1,13 @@
 require_relative "swap_two_elements"
 require_relative "crossover"
 require_relative "x_comparator"
+require_relative "aging"
 class TSPSolution
   include Comparable
   include SwapTwoElements
   include Crossover
   include XComparator
+  include Aging
   attr_reader :w, :n, :x, :f
   
   def initialize w, x, f = nil
