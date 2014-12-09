@@ -21,7 +21,7 @@ class GeneticAlgorithm
   BEST_PERCENT = 5
   MAX_AGE = 5
   CRACK_SIZE = 2
-  PARTIALLY_RANDOM_SELECTION = 0.85
+  PARTIALLY_RANDOM_SELECTION = 0.95
 
   def initialize w, paths
     @population = (TSPSolution.new_array w, paths).sort
@@ -38,8 +38,8 @@ class GeneticAlgorithm
       save_best
       #make_hill_climb_for_bests
       selection aging: true, 
-                #partially_random: PARTIALLY_RANDOM_SELECTION
-                crack_size: CRACK_SIZE
+                #partially_random: true,
+                crack_size: true
     end while stop_criteria
     make_hill_climb_for_bests
   end
@@ -66,5 +66,13 @@ class GeneticAlgorithm
 
   def best_percent
     BEST_PERCENT
+  end
+
+  def partially_random
+    PARTIALLY_RANDOM_SELECTION
+  end
+
+  def crack_size
+    CRACK_SIZE
   end
 end
