@@ -15,6 +15,7 @@ class Manager
       @algorithms.each do |algorithm|
         algorithm_solver = Solver.new(graph, algorithm, initial_solutions.dup)
         @problem_containers[problem][algorithm.to_s] = algorithm_solver.solve
+        p problem
       end
     end
     export_to_xls

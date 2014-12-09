@@ -1,26 +1,24 @@
 module Selection
   def selection params
+    delete_infinity
     aging if params[:aging]
     @population = if params[:crack_size]
-                    select_partially_random params[:crack_size]
+                    select_random_from_bests params[:crack_size]
+                  elsif params[:partially_random]
+                    select_partially_random params[:partially_random]
                   else
                     select
                   end
   end
 
-  def aging
-    #p @population.size
-    @population = @population
-                    .each{ |sol| sol.grow_up }
-                    .keep_if{ |sol| sol.age < max_age }
-    #p @population.size
-    #p @population.map{|sol| sol.age}
+  def select_partially_random random_part
+    new_population = select 1 - random_part
+    new_population += @population.shuffle.first(max_population random_part)
+    new_population
   end
 
-  def select_partially_random crack_size
+  def select_random_from_bests crack_size
     @population
-      .delete_if { |sol| sol.f == Float::INFINITY } \
-      #.delete_tsp_diplicates
       .sort
       .first(max_population crack_size)
       .shuffle
@@ -28,10 +26,19 @@ module Selection
       .sort
   end
 
-  def select
+  def select size = 1
     @population
-      .delete_if { |sol| sol.f == Float::INFINITY } \
       .sort
-      .first(max_population)
+      .first(max_population size)
+  end
+
+  def delete_infinity
+    @population = @population.delete_if { |sol| sol.f == Float::INFINITY }
+  end
+
+  def aging
+    @population = @population
+                    .each{ |sol| sol.grow_up }
+                    .keep_if{ |sol| sol.age < max_age }
   end
 end
