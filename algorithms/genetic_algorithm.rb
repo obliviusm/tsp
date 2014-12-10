@@ -1,12 +1,3 @@
-require_relative "../lib/tsp_solution"
-require_relative "../lib/population_based"
-require_relative "../lib/array_percent"
-require_relative "../lib/reproduction"
-require_relative "../lib/record_handling"
-require_relative "../lib/selection"
-require_relative "../lib/mutation"
-require_relative "hill_climbing"
-
 class GeneticAlgorithm
   include Reproduction
   include RecordHandling
@@ -21,7 +12,7 @@ class GeneticAlgorithm
   BEST_PERCENT = 5
   MAX_AGE = 5
   CRACK_SIZE = 2
-  PARTIALLY_RANDOM_SELECTION = 0.05
+  PARTIALLY_RANDOM_SELECTION = 0.02
 
   def initialize w, paths
     @population = (TSPSolution.new_array w, paths).sort

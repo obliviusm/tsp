@@ -1,6 +1,3 @@
-require_relative "../lib/tsp_solved_data"
-require_relative "../services/timer"
-
 class Solver
   def initialize graph, algorithm, initial_solutions
     @graph = graph

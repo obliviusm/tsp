@@ -1,7 +1,3 @@
-require_relative "services/xml_parser"
-require_relative "services/tsp_to_xls"
-require_relative "lib/solver"
-
 class Manager
   def initialize problems, algorithms
     @problems = problems

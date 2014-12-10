@@ -1,8 +1,6 @@
-require_relative "manager"
-require_relative "algorithms/hill_climbing"
-require_relative "algorithms/hill_climbing_shuffle"
-require_relative "algorithms/smoothing_algorithm"
-require_relative "algorithms/genetic_algorithm"
+require 'require_all'
+require_all '../tsp'
+
 #
 # => Input Info
 #

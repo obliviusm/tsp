@@ -1,5 +1,3 @@
-require_relative "xml_to_hash"
-
 module XMLParser
   # interface
   def self.get_tcp_problem filename

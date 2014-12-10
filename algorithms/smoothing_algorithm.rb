@@ -1,8 +1,3 @@
-require_relative "../lib/tsp_solution"
-require_relative "../lib/smooth_matrix"
-require_relative "hill_climbing"
-require_relative "../lib/single_solution_based"
-
 class SmoothingAlgorithm
   extend SingleSolutionBased
   include SmoothMatrix
