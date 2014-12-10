@@ -12,9 +12,11 @@ module Selection
   end
 
   def select_partially_random
-    new_population = select 1 - partially_random
+    #new_population = select 1 - partially_random
+    #@population -= new_population
+    new_population = select_random_from_bests.first(max_population partially_random)
     @population -= new_population
-    new_population += select_random_from_bests
+    new_population += @population.shuffle.first(max_population 1 - partially_random)
     new_population
   end
 
