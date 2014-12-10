@@ -33,9 +33,6 @@ class Manager
     @problem_containers = {}
     @problems.each do |problem|
       @problem_containers[problem] = {}
-      #@algorithms.each do |algorithm|
-      #  @problem_containers[problem][algorithm.to_s] = []
-      #end
     end
   end
 

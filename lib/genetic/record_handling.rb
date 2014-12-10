@@ -1,13 +1,13 @@
 module RecordHandling
   def save_best
     @best_climbers ||= []
-    @best_climbers += @population.sort.first(best_percent * 3)
+    @best_climbers += @population.sort.first save_best_size
   end
 
   def make_hill_climb_for_bests
     champions = @best_climbers
                       .delete_tsp_diplicates
-                      .sort.first(best_percent * @n * 3)
+                      .sort.first(hill_climb_record_size)
                       .map do |sol|
                         HillClimbing.new(sol.w, sol.x).solve
                       end

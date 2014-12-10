@@ -2,9 +2,9 @@ module Selection
   def selection params
     delete_infinity
     aging if params[:aging]
-    @population = if params[:partially_random]
+    @population = if params[:best_percent]
                     select_partially_random
-                  elsif params[:crack_size]
+                  elsif params[:random_bests]
                     select_random_from_bests
                   else
                     select
@@ -12,20 +12,18 @@ module Selection
   end
 
   def select_partially_random
-    #new_population = select 1 - partially_random
-    #@population -= new_population
-    new_population = select_random_from_bests.first(max_population partially_random)
+    new_population = select_random_from_bests select_best_percent
     @population -= new_population
-    new_population += @population.shuffle.first(max_population 1 - partially_random)
+    new_population += @population.shuffle.first(max_population 1 - select_best_percent)
     new_population
   end
 
-  def select_random_from_bests
+  def select_random_from_bests size = 1
     @population
       .sort
-      .first(max_population crack_size)
+      .first(max_population crack_for_bests)
       .shuffle
-      .first(max_population)
+      .first(max_population size)
       .sort
   end
 
