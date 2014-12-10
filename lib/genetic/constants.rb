@@ -3,6 +3,10 @@ module Constants
     (self.class::SELECTION[:max_population] * @n * size).ceil
   end
 
+  def make_aging?
+    self.class::SELECTION[:aging]
+  end
+
   def max_age
     self.class::SELECTION[:max_age]
   end
@@ -13,6 +17,10 @@ module Constants
 
   def select_best_percent
     self.class::SELECTION[:best_percent]
+  end
+
+  def selection_type
+    self.class::SELECTION[:type]
   end
 
   def mutation_percent
