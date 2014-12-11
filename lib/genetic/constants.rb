@@ -48,4 +48,8 @@ module Constants
   def hill_climb_record_size
     self.class::RECORD[:hill_climb] * @n
   end
+
+  def reproduction_type
+    self.class::REPRODUCTION[:reproduction_type]
+  end
 end

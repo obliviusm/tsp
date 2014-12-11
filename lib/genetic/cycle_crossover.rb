@@ -34,10 +34,13 @@ class CycleCrossover
   def divide_cycles
     mask = []
     (0..@c.max).each do |i|
-      num = rand (@f1 + @f2)
-      mask[i] = num < @f1 ? 0 : 1
+      mask[i] = rand_f ? 0 : 1
     end
     mask
+  end
+
+  def rand_f
+    rand(@f1+@f2) > @f1
   end
 
   def build_cycles_mask

@@ -17,10 +17,15 @@ module Reproduction
     children = []
     @population.shuffle.each_slice(2) do |sol1, sol2|
       if sol1 && sol2
-        children.push sol1.cycle_x(sol2)
-        children.push sol2.cycle_x(sol1)
+        children.concat reproduct(sol1, sol2)
       end
     end
     children
+  end
+
+  def reproduct(sol1, sol2)
+    [[sol1, sol2], [sol2, sol1]].map do |s1, s2|
+      s1.send(reproduction_type, s2)
+    end
   end
 end

@@ -1,21 +1,24 @@
 class GeneticCX < GeneticBase
   SELECTION = {
-    max_population: 50,
-    aging: false,
-    max_age: 5,
+    max_population: 5,
+    aging: true,
+    max_age: 3,
     crack_for_bests: 2,
     best_percent: 0.2,
     #wheel_size: 0.1,
-    type: :best_percent
+    type: :probability_wheel
   }
   MUTATION = {
     percent: 5,
-    swap_size: 3
+    swap_size: 1
   }
-  ITERATIONS = 10
+  ITERATIONS = 2
   RECORD = {
     save_best_size: 15,
     hill_climb: 15
+  }
+  REPRODUCTION = {
+    reproduction_type: :cycle_x
   }
 
   def initialize w, paths

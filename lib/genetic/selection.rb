@@ -36,9 +36,9 @@ module Selection
     size = wheel_size || 1
     probability_wheel.shuffle!
     begin
-      new_population += probability_wheel.pop(max_population size)
+      new_population.concat probability_wheel.pop(max_population size)
       new_population.uniq!
-    end while new_population.length < max_population(size)
+    end while new_population.length < max_population && probability_wheel.length > 0
     new_population.first max_population(size)
   end
 
@@ -49,7 +49,7 @@ module Selection
       next_sol = probability_wheel[next_num]
       new_population.push probability_wheel.delete(next_sol)
       #p new_population.size
-    end while new_population.length < max_population
+    end while new_population.length < max_population && probability_wheel.length > 0
     new_population
   end
 
