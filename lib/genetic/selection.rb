@@ -10,15 +10,35 @@ module Selection
                     select_random_from_bests
                   when :probability_wheel
                     select_probability_wheel
+                  when :shuffle_probability_wheel
+                    select_probability_wheel true
                   else
                     select
                   end
   end
 
-  def select_probability_wheel
+  def select_probability_wheel shuffle = false
     probability_wheel = fill_probability_wheel
-    population_indices = pull_solutions_from_wheel probability_wheel
+    population_indices =  unless shuffle
+                            pull_solutions_from_wheel probability_wheel
+                          else
+                            shuffle_solutions_from_wheel probability_wheel
+                          end
     population_indices.map{ |i| @population[i] }
+  end
+  
+  #def shuffle_solutions_from_wheel2 probability_wheel
+    
+  #end
+  
+  def shuffle_solutions_from_wheel probability_wheel
+    new_population = []
+    probability_wheel.shuffle!
+    begin
+      new_population += probability_wheel.pop(max_population)
+      new_population.uniq!
+    end while new_population.length < max_population
+    new_population.first max_population
   end
 
   def pull_solutions_from_wheel probability_wheel
@@ -36,9 +56,11 @@ module Selection
     probability_wheel = []
     max_f = @population.max.f + 1
     @population.each_with_index do |sol, i|
-      (max_f - sol.f).to_i.times do
-        probability_wheel.push i
-      end
+      times = (max_f - sol.f).to_i
+      probability_wheel += Array.new(times, i)
+      #(max_f - sol.f).to_i.times do
+      #  probability_wheel.push i
+      #end
     end
     probability_wheel
   end

@@ -1,17 +1,17 @@
 class GeneticCX < GeneticBase
   SELECTION = {
-    max_population: 20,
+    max_population: 10,
     aging: true,
     max_age: 5,
     crack_for_bests: 2,
     best_percent: 0.02,
-    type: :probability_wheel
+    type: :shuffle_probability_wheel
   }
   MUTATION = {
     percent: 5,
     swap_size: 3
   }
-  ITERATIONS = 10
+  ITERATIONS = 2
   RECORD = {
     save_best_size: 15,
     hill_climb: 15
