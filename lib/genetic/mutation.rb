@@ -1,4 +1,10 @@
 module Mutation
+  def extential_mutation
+    begin
+      mutation
+    end while @population.size < max_population
+  end
+
   def mutation
     mutant = @population
                 .shuffle

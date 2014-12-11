@@ -1,4 +1,6 @@
 class CycleCrossover
+  attr_reader :c
+
   def initialize solution1, solution2
     @x1, @x2 = solution1.x.dup, solution2.x.dup #parents
     @f1, @f2 = solution1.f, solution2.f

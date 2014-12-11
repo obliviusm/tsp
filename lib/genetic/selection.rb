@@ -33,12 +33,13 @@ module Selection
   
   def shuffle_solutions_from_wheel probability_wheel
     new_population = []
+    size = wheel_size || 1
     probability_wheel.shuffle!
     begin
-      new_population += probability_wheel.pop(max_population)
+      new_population += probability_wheel.pop(max_population size)
       new_population.uniq!
-    end while new_population.length < max_population
-    new_population.first max_population
+    end while new_population.length < max_population(size)
+    new_population.first max_population(size)
   end
 
   def pull_solutions_from_wheel probability_wheel
@@ -55,7 +56,7 @@ module Selection
   def fill_probability_wheel
     probability_wheel = []
     max_f = @population.max.f + 1
-    @population.each_with_index do |sol, i|
+    @population.shuffle.each_with_index do |sol, i|#.first(max_population crack_for_bests)
       times = (max_f - sol.f).to_i
       probability_wheel += Array.new(times, i)
       #(max_f - sol.f).to_i.times do

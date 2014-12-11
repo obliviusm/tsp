@@ -6,7 +6,7 @@ module RecordHandling
 
   def make_hill_climb_for_bests
     champions = @best_climbers
-                      .delete_tsp_diplicates
+                      .delete_tsp_diplicates \
                       .sort.first(hill_climb_record_size)
                       .map do |sol|
                         HillClimbing.new(sol.w, sol.x).solve

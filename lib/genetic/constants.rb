@@ -12,11 +12,17 @@ module Constants
   end
 
   def crack_for_bests
-    self.class::SELECTION[:crack_for_bests]
+    crack = self.class::SELECTION[:crack_for_bests]# - @counter.to_f / 100.0
+    #crack < 1 ? 1 : crack
   end
 
   def select_best_percent
-    self.class::SELECTION[:best_percent]
+    percent = self.class::SELECTION[:best_percent] * (1 + @counter.to_f / 10.0)
+    percent > 1 ? 1 : percent
+  end
+
+  def wheel_size
+    self.class::SELECTION[:wheel_size]
   end
 
   def selection_type

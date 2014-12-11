@@ -6,7 +6,7 @@ module Reproduction
   end
 
   def killing_reproduction
-    @population = reproduction # goodbye parents
+    @population = reproduction + @population.sort.first(1)
   end
 
   def saving_reproduction
