@@ -9,29 +9,34 @@ class PartiallyMappedX
   end
 
   def crossover
+    copy_gap
     for i in 0..@n
-      @x.push next_x(i)
+      @x[i] = next_x(i) unless @x[i]
+      #p @x
     end
-    p @x
     @x
   end
 
   protected
 
-  def next_x(i)
-    x_i = (in_gap?(i) || rand_f) ? @x1[i] : @x2[i]
-    @x1.delete x_i
-    @x2.delete x_i
+  def copy_gap
+    for i in 0..@n
+      @x[i] = @x1[i] if in_gap?(i)
+    end
+  end
 
+  def next_x(i)
+    begin 
+      x_i = @x2[i]
+      if @x.include?(x_i)
+        i = @x1.index(x_i)
+      end
+    end while @x.include?(x_i)
     x_i
   end
 
   def in_gap? i
     @k <= i && i <= @k + @m
-  end
-
-  def rand_f
-    rand(@f1+@f2) > @f1
   end
 
   def set_random_gap_size

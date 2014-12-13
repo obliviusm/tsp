@@ -11,7 +11,7 @@ class CycleCrossover
 
   def crossover
     build_cycles_mask
-    p @c.max
+    #p @c.max
     build_x
     #p @x1, @x2, @c, @x
     #fdfd

@@ -17,8 +17,9 @@ module Constants
   end
 
   def select_best_percent
-    percent = self.class::SELECTION[:best_percent] * (1 + @counter.to_f / 10.0)
-    percent > 1 ? 1 : percent
+    #percent = self.class::SELECTION[:best_percent] * (1 + @counter.to_f / 10.0)
+    #percent > 1 ? 1 : percent
+    self.class::SELECTION[:best_percent]
   end
 
   def wheel_size
@@ -37,8 +38,10 @@ module Constants
     self.class::MUTATION[:swap_size]
   end
 
-  def iterations
-    self.class::ITERATIONS * @n
+  def mutation_type
+    types = self.class::MUTATION[:mutation_type]
+    steps = self.class::MUTATION[:change_type_steps]
+    choose_type types, steps
   end
 
   def save_best_size
@@ -50,6 +53,31 @@ module Constants
   end
 
   def reproduction_type
-    self.class::REPRODUCTION[:reproduction_type]
+    types = self.class::REPRODUCTION[:reproduction_type]
+    steps = self.class::REPRODUCTION[:change_type_steps]
+    choose_type types, steps
+  end
+
+  def choose_type types, steps
+    if types.is_a? Array
+      if @counter.to_i % steps == 0
+        types.rotate!
+      end 
+      types[0]
+    else
+      types
+    end
+  end
+
+  def iterations
+    self.class::STOP_CRITERIA[:iterations] * @n
+  end
+
+  def max_steps_without_improving
+    self.class::STOP_CRITERIA[:max_steps_without_improving]
+  end
+
+  def stop_criteria_type
+    self.class::STOP_CRITERIA[:stop_type]
   end
 end

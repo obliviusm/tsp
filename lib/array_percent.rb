@@ -15,4 +15,11 @@ class Array
     end
     new_array
   end
+
+  def tsp_avg_f
+    sum = self.inject(0) do |sum, x|
+      sum + (x.f != Float::INFINITY ? x.f : 0)
+    end
+    sum / self.size
+  end
 end

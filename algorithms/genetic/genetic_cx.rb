@@ -2,23 +2,30 @@ class GeneticCX < GeneticBase
   SELECTION = {
     max_population: 5,
     aging: true,
-    max_age: 3,
-    crack_for_bests: 2,
-    best_percent: 0.2,
+    max_age: 5,
+    #crack_for_bests: 1.5,
+    best_percent: 0.3,
     #wheel_size: 0.1,
-    type: :probability_wheel
+    type: :best_percent
   }
   MUTATION = {
     percent: 5,
-    swap_size: 1
+    swap_size: 1,
+    mutation_type: [:hill_climbing, :swapping],
+    change_type_steps: 3
   }
-  ITERATIONS = 2
   RECORD = {
-    save_best_size: 15,
-    hill_climb: 15
+    save_best_size: 5#,
+    #hill_climb: 5
   }
   REPRODUCTION = {
-    reproduction_type: :cycle_x
+    reproduction_type: [:partially_mapped_x, :cycle_x, :max_preservative_x],
+    change_type_steps: 12
+  }
+  STOP_CRITERIA = {
+    iterations: 10,
+    max_steps_without_improving: 40,
+    type: :improving
   }
 
   def initialize w, paths
@@ -26,19 +33,18 @@ class GeneticCX < GeneticBase
   end
 
   def solve
-    #extential_reproduction
+    extential_reproduction
     #extential_mutation
     #save_best
     begin 
       saving_reproduction
       mutation
-      save_best
-      select_time = Timer.exec_time do
-        selection
-      end
-      p select_time
+      #save_best
+      make_hill_climb_for_current_bests
+      #update_record
+      selection
     end while stop_criteria
-    make_hill_climb_for_bests
+    #make_hill_climb_for_bests
   end
 end
 
@@ -121,4 +127,53 @@ ftv47 e=11
     hill_climb: 15
   }
 ------------------------------------------------------
+ftv44 - 1724
+
+  SELECTION = {
+    max_population: 100,
+    aging: true,
+    max_age: 5,
+    crack_for_bests: 1.5,
+    best_percent: 0.2,
+    #wheel_size: 0.1,
+    type: :bla
+  }
+  MUTATION = {
+    percent: 5,
+    swap_size: 1
+  }
+  ITERATIONS = 10
+  RECORD = {
+    save_best_size: 5,
+    hill_climb: 5
+  }
+  REPRODUCTION = {
+    reproduction_type: :partially_mapped_x
+  }
+------------------------------------------------------
+ftv44 e1.7
+  SELECTION = {
+    max_population: 5,
+    aging: true,
+    max_age: 5,
+    crack_for_bests: 1.5,
+    best_percent: 0.3,
+    #wheel_size: 0.1,
+    type: :best_percent
+  }
+  MUTATION = {
+    percent: 5,
+    swap_size: 1,
+    mutation_type: [:hill_climbing, :swapping],
+    change_type_steps: 3
+  }
+  ITERATIONS = 10
+  RECORD = {
+    save_best_size: 5,
+    hill_climb: 5
+  }
+  REPRODUCTION = {
+    reproduction_type: [:partially_mapped_x, :cycle_x, :max_preservative_x],
+    change_type_steps: 12
+  }
 =end

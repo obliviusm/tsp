@@ -4,6 +4,7 @@ class GeneticBase
   include Selection
   include Mutation
   include Constants
+  include StopCriteria
   extend PopulationBased
   attr_reader :solution
 
@@ -11,13 +12,5 @@ class GeneticBase
     @population = (TSPSolution.new_array w, paths).sort
     @solution = @population.min
     @n = @solution.n
-  end
-
-  protected
-
-  def stop_criteria
-    @counter ||= 0
-    @counter += 1
-    @counter < iterations
   end
 end
