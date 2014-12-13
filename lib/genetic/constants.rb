@@ -76,11 +76,17 @@ module Constants
     types = self.class::REPRODUCTION[:reproduction_type]
     return unless types.is_a? Array
     change_type = self.class::REPRODUCTION[:change_type]
-    return unless change_type == :cyclic
-
     steps = self.class::REPRODUCTION[:change_type_steps]
-    if @counter % steps == 0
-      types.rotate!
+
+    case change_type 
+    when :cyclic
+      if @counter % steps == 0
+        types.rotate!
+      end
+    when :got_stuck
+      if @steps_without_improving != 0 && @steps_without_improving % steps == 0
+        types.rotate!
+      end
     end
   end
 

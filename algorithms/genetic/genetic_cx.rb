@@ -19,9 +19,9 @@ class GeneticCX < GeneticBase
     #hill_climb: 5
   }
   REPRODUCTION = {
-    reproduction_type: [:partially_mapped_x, :cycle_x, :max_preservative_x],
+    reproduction_type: [:cycle_x, :max_preservative_x], #:partially_mapped_x, 
     change_type_steps: 12,
-    change_type: :cyclic
+    change_type: :cyclic#:got_stuck
   }
   STOP_CRITERIA = {
     iterations: 10,
