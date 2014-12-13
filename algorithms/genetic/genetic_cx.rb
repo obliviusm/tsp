@@ -20,11 +20,12 @@ class GeneticCX < GeneticBase
   }
   REPRODUCTION = {
     reproduction_type: [:partially_mapped_x, :cycle_x, :max_preservative_x],
-    change_type_steps: 12
+    change_type_steps: 12,
+    change_type: :cyclic
   }
   STOP_CRITERIA = {
     iterations: 10,
-    max_steps_without_improving: 40,
+    #max_steps_without_improving: 40,
     type: :improving
   }
 

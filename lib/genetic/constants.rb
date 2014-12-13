@@ -39,9 +39,21 @@ module Constants
   end
 
   def mutation_type
+    #types = self.class::MUTATION[:mutation_type]
+    #steps = self.class::MUTATION[:change_type_steps]
+    #choose_type types, steps
     types = self.class::MUTATION[:mutation_type]
+    (types.is_a? Array) ? types[0] : types
+  end
+
+  def mutation_type_change
+    types = self.class::MUTATION[:mutation_type]
+    return unless types.is_a? Array
+
     steps = self.class::MUTATION[:change_type_steps]
-    choose_type types, steps
+    if @counter % steps == 0
+      types.rotate!
+    end
   end
 
   def save_best_size
@@ -53,9 +65,23 @@ module Constants
   end
 
   def reproduction_type
+    #types = self.class::REPRODUCTION[:reproduction_type]
+    #steps = self.class::REPRODUCTION[:change_type_steps]
+    #choose_type types, steps
     types = self.class::REPRODUCTION[:reproduction_type]
+    (types.is_a? Array) ? types[0] : types
+  end
+
+  def reproduction_change_type
+    types = self.class::REPRODUCTION[:reproduction_type]
+    return unless types.is_a? Array
+    change_type = self.class::REPRODUCTION[:change_type]
+    return unless change_type == :cyclic
+
     steps = self.class::REPRODUCTION[:change_type_steps]
-    choose_type types, steps
+    if @counter % steps == 0
+      types.rotate!
+    end
   end
 
   def choose_type types, steps
@@ -74,7 +100,8 @@ module Constants
   end
 
   def max_steps_without_improving
-    self.class::STOP_CRITERIA[:max_steps_without_improving]
+    #self.class::STOP_CRITERIA[:max_steps_without_improving]
+    @n * 2
   end
 
   def stop_criteria_type

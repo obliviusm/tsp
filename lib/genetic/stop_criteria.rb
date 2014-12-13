@@ -12,6 +12,7 @@ module StopCriteria
   def count
     @counter ||= 0
     @counter += 1
+    count_events
   end
 
   def record_was_improved status
@@ -21,5 +22,10 @@ module StopCriteria
     else
       @steps_without_improving += 1
     end
+  end
+
+  def count_events
+    mutation_type_change
+    reproduction_change_type
   end
 end
