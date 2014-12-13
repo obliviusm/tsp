@@ -78,6 +78,6 @@ module Constants
   end
 
   def stop_criteria_type
-    self.class::STOP_CRITERIA[:stop_type]
+    self.class::STOP_CRITERIA[:type]
   end
 end

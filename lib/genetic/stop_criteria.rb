@@ -1,10 +1,9 @@
 module StopCriteria
   def stop_criteria
     count
-    
     case stop_criteria_type
     when :improving
-      @steps_without_improving > max_steps_without_improving
+      @steps_without_improving < max_steps_without_improving
     else
       @counter < iterations
     end
