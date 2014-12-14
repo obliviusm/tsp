@@ -26,25 +26,26 @@ module RecordHandling
   end
 
   def update_record candidate = nil
-    print avg_status_mess
+    avg_status_mess
     candidate ||= @population.min
     candidate = HillClimbing.new(candidate.w, candidate.x).solve
     if candidate < @solution
       @solution = candidate 
       record_was_improved true
-      p best_status_mess
+      best_status_mess
     else
       record_was_improved false
     end
   end
 
   def avg_status_mess
-    @counter.to_s + " "
-    @counter.to_s + ". avg: " + @population.tsp_avg_f.to_s \
-    + " " + reproduction_type.to_s + " " + mutation_type.to_s
+    print @counter.to_s + " "
+    #@counter.to_s + ". avg: " + @population.tsp_avg_f.to_s \
+    #+ " " + reproduction_type.to_s + " " + mutation_type.to_s
   end
 
   def best_status_mess
-    "best: " + @solution.f.to_s
+    p ""
+    p "best: " + @solution.f.to_s
   end
 end

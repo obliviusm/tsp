@@ -106,8 +106,7 @@ module Constants
   end
 
   def max_steps_without_improving
-    #self.class::STOP_CRITERIA[:max_steps_without_improving]
-    @n * 2
+    self.class::STOP_CRITERIA[:max_steps_without_improving] * @n
   end
 
   def stop_criteria_type
